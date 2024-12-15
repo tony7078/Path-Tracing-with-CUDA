@@ -1,5 +1,6 @@
-﻿#pragma once
+#pragma once
 #include "ray.h"
+#include "interval.h"
 
 class material;
 
@@ -22,6 +23,5 @@ public:
 
 class hittable {
 public:
-
-    __device__ virtual bool hit(const ray& r, float tmin, float tmax, hit_record& rec) const = 0;
+    __device__ virtual bool hit(const ray& r, interval ray_t, hit_record& rec) const = 0;
 };
